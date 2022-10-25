@@ -1,0 +1,141 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --clr-contrast: #fe5f55;
+  --clr-accent1: #1962a1;
+  --clr-accent2: #577399;
+  --clr-bg: #f7f7ff;
+  --clr-font: #242424;
+  --clr-fontAccent: #6B7280;
+  --clr-shadow: #808080;
+  --clr-row: #F9FAFB;
+  --clr-hr: #6B7280;
+  --clr-loss: #ED5565;
+  --clr-gain: #57BD0F;
+
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.App {
+  background-color: var(--clr-bg);
+  color: var(--clr-font);
+  font-size: 16px;
+  font-weight: 400;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.Cryptos {
+  max-height: 85vh;
+  overflow-y:scroll;
+  border-bottom: 1px solid var(--clr-fontAccent);
+  padding: 0 1em;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.crypto-row {
+  align-items: center;
+  gap: 1em;
+}
+
+
+.crypto-img {
+  width: 24px;
+}
+.crypto-symbol {
+  text-transform: uppercase;
+}
+
+.coin-data {
+  display: flex;
+  gap: .8em;
+  align-items: center;
+}
+
+
+
+
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+
+.crypto-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-font);
+
+}
+
+.crypto-symbol {
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+
+
+.starred {
+  color: #FFCC66;
+}
+
+.star-btn {
+  color: var(--clr-fontAccent);
+  cursor: pointer;
+  margin: .5em;
+
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  transition: all 100ms;
+
+}
+
+.star-btn:hover {
+  color: #FFCC66;
+}
+
+
+.flex {
+    gap: .5em;
+    display: flex;
+}
+
+

@@ -1,0 +1,13 @@
+
+
+.CryptoCard {
+    width: 200px;
+    height: 150px;
+    box-shadow: 0 0 10px var(--clr-shadow);
+    border-radius: 15px;
+}
+
+
+
+.crypto-symbol {
+}

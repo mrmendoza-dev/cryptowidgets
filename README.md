@@ -11,4 +11,6 @@ Cryptocurrency widgets and tools such as price trackers, converters, and indicat
 -
 
 ## Resources
-- 
+- [Coingecko](https://www.coingecko.com/)
+- [Coingecko API](https://www.coingecko.com/api/documentations/v3)
+
