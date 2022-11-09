@@ -7,6 +7,8 @@ import styled from "styled-components";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 import Scroller from "./components/Scroller";
 import CryptoCard from "./components/CryptoCard";
+import FearGreed from "./components/FearGreed";
+import EthGasTracker from "./components/EthGasTracker";
 
 
 const Percent = styled.p<{ data: number }>`
@@ -116,7 +118,9 @@ function App() {
 
       <div className="Widgets">
         <Scroller cryptos={cryptos} />
-        <CryptoCard data={cryptos[0]} />
+        {/* <CryptoCard cryptos={cryptos} /> */}
+        <FearGreed />
+        <EthGasTracker />
       </div>
     </div>
   );

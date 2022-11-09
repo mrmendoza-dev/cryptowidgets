@@ -1,0 +1,21 @@
+
+
+.EthGasTracker {
+    border: 1px solid black;
+    padding: .6em 1em;
+    max-width: 300px;
+}
+
+.gas-tier {
+    display: flex;
+    justify-content: space-between;
+}
+.gas-speed {
+    
+}
+.gas-price {
+    
+}
+.gas-block {
+    
+}

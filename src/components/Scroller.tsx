@@ -30,7 +30,7 @@ export default function Scroller(props: any) {
   let cryptoData = props.cryptos.filter((crypto: any)=> {
       return currencies.includes(crypto.id);
   })
-  console.log(cryptoData)
+  // console.log(cryptoData)
 
   return (
     <div className="Scroller">
