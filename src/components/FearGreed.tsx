@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const colorCodes = ["#f00", "#f00", "#ff0", "#f00", "#f00"]
 
-const Percent = styled.p<{ data: number }>`
+const Percent = styled.p<{ data: any }>`
   color: ${(props: any) =>
     props.data === 0
       ? "var(--clr-fontAccent)"
