@@ -5,9 +5,12 @@ import "../css/EthGasTracker.css"
 export default function EthGasTracker() {
 
   const [oracle, setOracle] = useState({
-    // value: "",
-    // value_classification: "",
-    // timestamp: "",
+    FastGasPrice: "",
+    ProposeGasPrice: "",
+    SafeGasPrice: "",
+    LastBlock: "",
+    suggestBaseFee: "",
+    gasUsedRatio: "",
   });
   const apiKey = "JF9VSJETPKYG3XE2Y68WIB7BSN5KKFFTWD";
   const url =    `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${apiKey}`;
@@ -30,7 +33,7 @@ export default function EthGasTracker() {
 
   return (
     <div className="EthGasTracker">
-      {/* <div className="gas-tier">
+      <div className="gas-tier">
         <p className="gas-speed">Fast</p>
         <p className="gas-price">{oracle.FastGasPrice}</p>
       </div>
@@ -42,10 +45,10 @@ export default function EthGasTracker() {
         <p className="gas-speed">Safe</p>
         <p className="gas-price">{oracle.SafeGasPrice}</p>
       </div>
-      <p className="gas-block">Last Block: {oracle.LastBlock}</p> */}
+      <p className="gas-block">Last Block: {oracle.LastBlock}</p> */
 
-      {/* <p className="">{oracle.suggestBaseFee}</p> */}
-      {/* <p className="">{oracle.gasUsedRatio}</p> */}
+      <p className="">{oracle.suggestBaseFee}</p>
+      <p className="">{oracle.gasUsedRatio}</p>
     </div>
   );
 }
