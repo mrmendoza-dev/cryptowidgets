@@ -9,6 +9,7 @@ import Scroller from "./components/Scroller";
 import CryptoCard from "./components/CryptoCard";
 import FearGreed from "./components/FearGreed";
 import EthGasTracker from "./components/EthGasTracker";
+import Converter from "./components/Converter";
 
 
 const Percent = styled.p<{ data: number }>`
@@ -121,6 +122,7 @@ function App() {
         {/* <CryptoCard cryptos={cryptos} /> */}
         <FearGreed />
         <EthGasTracker />
+        <Converter />
       </div>
     </div>
   );

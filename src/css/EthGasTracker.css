@@ -8,14 +8,17 @@
 
 .gas-tier {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    font-size: 1.2rem;
 }
 .gas-speed {
-    
+    text-align: right;
+    margin-right: 1.2em;
 }
 .gas-price {
     
 }
 .gas-block {
-    
+    text-align: right;
+    margin-top: .6em;
 }

@@ -45,10 +45,10 @@ export default function EthGasTracker() {
         <p className="gas-speed">Safe</p>
         <p className="gas-price">{oracle.SafeGasPrice}</p>
       </div>
-      <p className="gas-block">Last Block: {oracle.LastBlock}</p> */
-
-      <p className="">{oracle.suggestBaseFee}</p>
-      <p className="">{oracle.gasUsedRatio}</p>
+      <p className="gas-block">Last Block: {oracle.LastBlock}</p>
+      
+      {/* <p className="">{oracle.suggestBaseFee}</p> */}
+      {/* <p className="">{oracle.gasUsedRatio}</p> */}
     </div>
   );
 }
