@@ -7,8 +7,6 @@ Cryptocurrency widgets and tools such as price trackers, converters, and indicat
 - Ethereum gas tracker
 - Fear / Greed indicator
 
-## TO DO
--
 
 ## Resources
 - [Coingecko](https://www.coingecko.com/)
