@@ -1,7 +1,7 @@
 
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
-import "../css/Scroller.css"
+import "./index.css"
 import styled from "styled-components";
 
 
@@ -15,6 +15,7 @@ const Percent = styled.p<{ data: number }>`
 
 export default function Scroller(props: any) {
 
+  const cgUrl = "https://www.coingecko.com/en/coins/";
   const currencies = [
     "bitcoin",
     "ethereum",
@@ -30,7 +31,6 @@ export default function Scroller(props: any) {
   let cryptoData = props.cryptos.filter((crypto: any)=> {
       return currencies.includes(crypto.id);
   })
-  // console.log(cryptoData)
 
   return (
     <div className="Scroller">
@@ -40,10 +40,13 @@ export default function Scroller(props: any) {
             <div className="ticker-cell" key={nanoid()}>
               <img className="crypto-img" src={crypto.image} />
 
-              <div className="">
-                <p className="crypto-name">{crypto.name}</p>
-                <p className="crypto-symbol">{crypto.symbol}</p>
-              </div>
+              <a href={`${cgUrl}/${crypto.id}`} target="_blank">
+                <div className="">
+                  <p className="crypto-name">{crypto.name}</p>
+                  <p className="crypto-symbol">{crypto.symbol}</p>
+                </div>
+              </a>
+
               <div className="price-data">
                 <p className="crypto-price">${crypto.current_price}</p>
                 <Percent
@@ -55,7 +58,8 @@ export default function Scroller(props: any) {
                     {
                       maximumFractionDigits: 2,
                     }
-                  )}%
+                  )}
+                  %
                 </Percent>
               </div>
             </div>

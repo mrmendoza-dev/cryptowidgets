@@ -139,3 +139,15 @@ button {
 }
 
 
+
+.widget-row {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.module-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+}

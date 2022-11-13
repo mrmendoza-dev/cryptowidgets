@@ -1,7 +1,6 @@
 
-
 .EthGasTracker {
-    border: 1px solid black;
+    border: 1px solid #9a9a9a;
     padding: .6em 1em;
     max-width: 300px;
 }

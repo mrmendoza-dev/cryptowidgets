@@ -1,15 +1,13 @@
-import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import "./css/App.css";
 import DarkMode from "./components/DarkMode";
 import logo from "./assets/logo.png";
 import styled from "styled-components";
-import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
-import Scroller from "./components/Scroller";
+import Scroller from "./components/Scroller/Scroller";
 import CryptoCard from "./components/CryptoCard";
-import FearGreed from "./components/FearGreed";
-import EthGasTracker from "./components/EthGasTracker";
-import Converter from "./components/Converter";
+import FearGreed from "./components/FearGreed/FearGreed";
+import EthGasTracker from "./components/EthGasTracker/EthGasTracker";
+import Converter from "./components/Converter/Converter";
 
 
 const Percent = styled.p<{ data: number }>`
@@ -120,8 +118,10 @@ function App() {
       <div className="Widgets">
         <Scroller cryptos={cryptos} />
         {/* <CryptoCard cryptos={cryptos} /> */}
-        <FearGreed />
-        <EthGasTracker />
+        <div className="widget-row">
+          <FearGreed />
+          <EthGasTracker />
+        </div>
         <Converter />
       </div>
     </div>

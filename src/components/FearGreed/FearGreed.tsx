@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import "../css/FearGreed.css";
+import "./index.css";
 import styled from "styled-components";
 
 
 
-const colorCodes = ["#f00", "#f00", "#ff0", "#f00", "#f00"]
+const colorCodes = ["#F02602", "#FF8400", "#FDD101", "#B7DD16", "#4FBA1E"];
 
 const Percent = styled.p<{ data: any }>`
   color: ${(props: any) =>
-    props.data === 0
-      ? "var(--clr-fontAccent)"
-      : props.data > 0
-      ? "var(--clr-gain)"
-      : "var(--clr-loss)"};
+    props.data >= 80
+      ? colorCodes[4]
+      : props.data >= 60
+      ? colorCodes[3]
+      : props.data >= 40
+      ? colorCodes[2]
+      : props.data >= 20
+      ? colorCodes[1]
+      : colorCodes[0]};
 `;
 
 
@@ -40,11 +44,17 @@ export default function FearGreed() {
 
   return (
     <div className="FearGreed">
-      <p className="fg-value">
-        <Percent data={index.value}>{index.value}</Percent>
-      </p>
+      <p className="module-title">Crypto Fear/Greed</p>
+      <Percent className="fg-value" data={index.value}>
+        {index.value}
+      </Percent>
       <p className="fg-class">{index.value_classification}</p>
-      <p className="fg-time">Last Update: {index.timestamp}</p>
+      <a
+        href="https://alternative.me/crypto/fear-and-greed-index/"
+        target="_blank"
+      >
+        <p className="fg-time">Last Update: {index.timestamp}</p>
+      </a>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
-import "../css/Converter.css";
+import "./index.css";
+import { nanoid } from "nanoid";
 
 export default function Converter() {
 
@@ -49,7 +50,6 @@ export default function Converter() {
   function handleSubmit(event: any) {
     event.preventDefault();
     // submitToApi(formData)
-    console.log(formData);
   }
 
   function swapCurrencies() {
@@ -88,7 +88,7 @@ export default function Converter() {
             value={formData.base}
           >
             {currencies.map((currency) => (
-              <option value={currency.symbol}>
+              <option key={nanoid()} value={currency.symbol}>
                 {currency.name} ({currency.symbol})
               </option>
             ))}
@@ -105,7 +105,7 @@ export default function Converter() {
             value={formData.target}
           >
             {currencies.map((currency) => (
-              <option value={currency.symbol}>
+              <option key={nanoid()} value={currency.symbol}>
                 {currency.name} ({currency.symbol})
               </option>
             ))}

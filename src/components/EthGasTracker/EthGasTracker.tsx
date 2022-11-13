@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import "../css/EthGasTracker.css"
-
+import "./index.css"
 
 export default function EthGasTracker() {
 
@@ -29,10 +28,9 @@ export default function EthGasTracker() {
   }
   useEffect(getCryptoData, []);
 
-        console.log(oracle);
-
   return (
     <div className="EthGasTracker">
+      <p className="module-title">ETH Gas Tracker</p>
       <div className="gas-tier">
         <p className="gas-speed">Fast</p>
         <p className="gas-price">{oracle.FastGasPrice}</p>
@@ -45,8 +43,10 @@ export default function EthGasTracker() {
         <p className="gas-speed">Safe</p>
         <p className="gas-price">{oracle.SafeGasPrice}</p>
       </div>
-      <p className="gas-block">Last Block: {oracle.LastBlock}</p>
-      
+      <a href={`https://etherscan.io/block/${oracle.LastBlock}`} target="_blank">
+        <p className="gas-block">Last Block: {oracle.LastBlock}</p>
+      </a>
+
       {/* <p className="">{oracle.suggestBaseFee}</p> */}
       {/* <p className="">{oracle.gasUsedRatio}</p> */}
     </div>

@@ -46,8 +46,6 @@ export default function DarkMode() {
     hr: "#2F2F2F",
   };
 
-
-
   const colors = [
     "--clr-font",
     "--clr-bg",
