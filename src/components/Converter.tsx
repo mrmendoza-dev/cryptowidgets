@@ -21,7 +21,7 @@ export default function Converter() {
   const currencies = [...forexCurrencies, ...cryptocurrencies];
 
   const [formData, setFormData] = useState({
-    quantity: "1",
+    quantity: 1,
     base: "USD",
     target: "BTC",
   });
