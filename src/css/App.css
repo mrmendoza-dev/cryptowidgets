@@ -20,6 +20,7 @@
   --clr-hr: #6B7280;
   --clr-loss: #ED5565;
   --clr-gain: #57BD0F;
+  --clr-logo: #fc8e06;
 
 }
 
@@ -53,6 +54,8 @@ button {
   font-weight: 400;
     height: 100vh;
     /* overflow: hidden; */
+    display: flex;
+    flex-flow: column;
 }
 
 .Cryptos {
@@ -150,4 +153,9 @@ button {
     font-size: 1.6rem;
     font-weight: 600;
     text-align: center;
+}
+
+
+.space {
+  flex: 1 1 auto;
 }

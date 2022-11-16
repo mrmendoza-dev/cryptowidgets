@@ -10,13 +10,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
-
-      max-width: 100%;
-  overflow: hidden;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .marquee {
