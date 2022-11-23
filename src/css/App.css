@@ -149,6 +149,14 @@ button {
   gap: 2em;
 }
 
+
+.module {
+    border: 1px solid #9a9a9a;
+    padding: .6em 1em;
+    max-width: 300px;
+    text-align: center;
+}
+
 .module-title {
     font-size: 1.6rem;
     font-weight: 600;

@@ -1,0 +1,15 @@
+
+
+.Trending {
+    border: 1px solid #9a9a9a;
+    padding: .6em 1em;
+    max-width: 300px;
+    text-align: center;
+}
+
+.trending-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .6em;
+}

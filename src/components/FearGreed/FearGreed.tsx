@@ -43,7 +43,7 @@ export default function FearGreed() {
   useEffect(getCryptoData, []);
 
   return (
-    <div className="FearGreed">
+    <div className="FearGreed module">
       <p className="module-title">Crypto Fear/Greed</p>
       <Percent className="fg-value" data={index.value}>
         {index.value}

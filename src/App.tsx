@@ -8,6 +8,9 @@ import CryptoCard from "./components/CryptoCard";
 import FearGreed from "./components/FearGreed/FearGreed";
 import EthGasTracker from "./components/EthGasTracker/EthGasTracker";
 import Converter from "./components/Converter/Converter";
+import Dominance from "./components/Dominance/Dominance";
+import Trending from "./components/Trending/Trending";
+
 import Footer from "./components/Nav/Footer";
 import Header from "./components/Nav/Header";
 
@@ -30,9 +33,12 @@ function App() {
     total_volume: { usd: 0 },
     market_cap_percentage: { btc: 0, eth: 0 },
   });
+    const [trending, setTrending] = useState([]);
+
 
   useEffect(getCryptoData, []);
   useEffect(getGlobalData, []);
+  useEffect(getTrendingData, []);
 
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const baseUrl = "https://api.coingecko.com/api/v3/";
@@ -47,6 +53,9 @@ function App() {
     pageNum
   )}&sparkline=${sparkline}&price_change_percentage=${pricePercentage}`;
   const globalUrl = "https://api.coingecko.com/api/v3/global";
+  const trendingUrl = "https://api.coingecko.com/api/v3/search/trending";
+
+
 
   function getCryptoData() {
     fetch(cryptosUrl)
@@ -64,17 +73,30 @@ function App() {
       });
   }
 
+  function getTrendingData() {
+    fetch(trendingUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setTrending(data.coins);
+      });
+  }
 
-
+console.log(trending)
   return (
     <div className="App">
       <Header globalData={globalData} title={"CryptoWidgets"} />
       <div className="Widgets">
         <Scroller cryptos={cryptos} />
-        {/* <CryptoCard cryptos={cryptos} /> */}
+        <div className="widget-row">
+          {/* <CryptoCard cryptos={cryptos} /> */}
+        </div>
         <div className="widget-row">
           <FearGreed />
           <EthGasTracker />
+        </div>
+        <div className="widget-row">
+          <Dominance cryptos={globalData.market_cap_percentage} />
+          <Trending cryptos={trending} />
         </div>
         <Converter />
       </div>

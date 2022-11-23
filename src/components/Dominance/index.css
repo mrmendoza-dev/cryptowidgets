@@ -1,0 +1,14 @@
+
+
+.Dominance {
+    border: 1px solid #9a9a9a;
+    padding: .6em 1em;
+    max-width: 300px;
+    text-align: center;
+}
+.dominance-row {
+    display: flex;
+    /* justify-content: center; */
+    gap: 1em;
+    text-align: left;
+}

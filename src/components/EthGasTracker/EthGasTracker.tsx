@@ -29,7 +29,7 @@ export default function EthGasTracker() {
   useEffect(getCryptoData, []);
 
   return (
-    <div className="EthGasTracker">
+    <div className="EthGasTracker module">
       <p className="module-title">ETH Gas Tracker</p>
       <div className="gas-tier">
         <p className="gas-speed">Fast</p>
@@ -43,7 +43,10 @@ export default function EthGasTracker() {
         <p className="gas-speed">Safe</p>
         <p className="gas-price">{oracle.SafeGasPrice}</p>
       </div>
-      <a href={`https://etherscan.io/block/${oracle.LastBlock}`} target="_blank">
+      <a
+        href={`https://etherscan.io/block/${oracle.LastBlock}`}
+        target="_blank"
+      >
         <p className="gas-block">Last Block: {oracle.LastBlock}</p>
       </a>
 
