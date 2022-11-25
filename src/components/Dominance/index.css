@@ -6,9 +6,25 @@
     max-width: 300px;
     text-align: center;
 }
-.dominance-row {
+
+
+
+.top-3 {
     display: flex;
-    /* justify-content: center; */
-    gap: 1em;
+    justify-content: space-between;
+}
+.top-3-crypto {
     text-align: left;
+    display: flex;
+    justify-content: center;
+    gap: .2em;
+}
+
+
+.top-3-name {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.top-3-value {
 }

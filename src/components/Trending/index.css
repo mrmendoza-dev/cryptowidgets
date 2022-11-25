@@ -11,5 +11,25 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: .6em;
+    /* gap: .6em; */
+}
+
+.trending-rank {
+    text-align: left;
+    /* width: 100px; */
+    width: 20%;
+}
+.trending-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.trending-symbol {
+    font-weight: 400;
+        font-size: 1rem;
+
+
+}
+.trending-logo {
+    width: 30px;
 }

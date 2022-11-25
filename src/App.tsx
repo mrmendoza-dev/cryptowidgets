@@ -81,7 +81,6 @@ function App() {
       });
   }
 
-console.log(trending)
   return (
     <div className="App">
       <Header globalData={globalData} title={"CryptoWidgets"} />
