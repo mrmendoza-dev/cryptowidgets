@@ -3,7 +3,7 @@
 .Trending {
     /* border: 1px solid #9a9a9a; */
     padding: .6em 1em;
-    max-width: 300px;
+    /* max-width: 300px; */
     text-align: center;
 }
 
@@ -11,25 +11,40 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    width: max-content;
+    width: 100%;
+    padding: .2em .1em;
     /* gap: .6em; */
 }
+
 
 .trending-rank {
     text-align: left;
     /* width: 100px; */
-    width: 20%;
+    min-width: 40px;
 }
 .trending-name {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .trending-symbol {
     font-weight: 400;
-        font-size: 1rem;
+        font-size: .9rem;
 
 
 }
 .trending-logo {
-    width: 30px;
+    width: 25px;
 }
+
+.trending-title {
+    display: flex;
+    gap: .8em;
+    margin-left: .6em;
+    align-items: center;
+}
+
+
+
+

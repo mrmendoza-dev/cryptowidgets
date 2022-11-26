@@ -10,6 +10,7 @@ import EthGasTracker from "./components/EthGasTracker/EthGasTracker";
 import Converter from "./components/Converter/Converter";
 import Dominance from "./components/Dominance/Dominance";
 import Trending from "./components/Trending/Trending";
+import CryptoList from "./components/CryptoList/CryptoList";
 
 import Footer from "./components/Nav/Footer";
 import Header from "./components/Nav/Header";
@@ -86,12 +87,12 @@ function App() {
       <Header globalData={globalData} title={"CryptoWidgets"} />
       <div className="Widgets">
         <Scroller cryptos={cryptos} />
-          <div className="crypto-cards">
-            {cryptos.slice(0, 5).map((crypto) => {
-              return <CryptoCard crypto={crypto} />;
-            })}
-          </div>
-          
+        <div className="crypto-cards">
+          {cryptos.slice(0, 5).map((crypto) => {
+            return <CryptoCard crypto={crypto} />;
+          })}
+        </div>
+
         <div className="widget-row">
           <FearGreed />
           <EthGasTracker />
@@ -99,6 +100,9 @@ function App() {
         <div className="widget-row">
           <Dominance cryptos={globalData.market_cap_percentage} />
           <Trending cryptos={trending} />
+        </div>
+        <div className="widget-row">
+          {/* <CryptoList cryptos={cryptos.slice(0,10)} /> */}
         </div>
         <Converter />
       </div>

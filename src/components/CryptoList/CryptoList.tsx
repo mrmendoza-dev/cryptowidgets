@@ -1,5 +1,7 @@
 
 
+
+
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import "./index.css";
@@ -7,19 +9,19 @@ import "./index.css";
 
 
 
-export default function Trending(props: any) {
-  const trendingList = props.cryptos;
+export default function CryptoList(props: any) {
+  const cryptos = props.cryptos;
   return (
-    <div className="Trending module">
-      <p className="module-title">Trending</p>
+    <div className="CryptoList module">
+      <p className="module-title">CryptoList</p>
 
       <table>
         <thead></thead>
         <tbody>
-          {trendingList.map((crypto: any) => {
+          {cryptos.map((crypto: any) => {
             return (
               <tr key={nanoid()} className="trending-row">
-                <td>
+                {/* <td>
                   <p className="trending-rank">{crypto.item.market_cap_rank}</p>
                 </td>
                 <td>
@@ -35,7 +37,7 @@ export default function Trending(props: any) {
                       <p className="trending-symbol">{crypto.item.symbol}</p>
                     </div>
                   </a>
-                </td>
+                </td> */}
               </tr>
             );
           })}

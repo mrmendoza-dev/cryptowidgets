@@ -9,7 +9,8 @@
     border-radius: 15px;
     padding: 1em;
     background-color: VAR(--clr-bg);
-    transition: all 150ms;
+    transition: transform 150ms;
+    cursor: pointer;
 
 }
 .CryptoCard:hover {
