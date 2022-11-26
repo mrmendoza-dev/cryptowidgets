@@ -86,9 +86,12 @@ function App() {
       <Header globalData={globalData} title={"CryptoWidgets"} />
       <div className="Widgets">
         <Scroller cryptos={cryptos} />
-        <div className="widget-row">
-          {/* <CryptoCard cryptos={cryptos} /> */}
-        </div>
+          <div className="crypto-cards">
+            {cryptos.slice(0, 5).map((crypto) => {
+              return <CryptoCard crypto={crypto} />;
+            })}
+          </div>
+          
         <div className="widget-row">
           <FearGreed />
           <EthGasTracker />

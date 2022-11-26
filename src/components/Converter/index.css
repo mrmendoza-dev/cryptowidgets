@@ -1,7 +1,7 @@
 
 .Converter {
-    background-color: #F8F8F8;
-    color:black;
+    background-color: var(--clr-bg);
+    color:var(--clr-font);
     padding: 1em 2em;
 
 }

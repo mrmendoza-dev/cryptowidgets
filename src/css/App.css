@@ -147,14 +147,18 @@ button {
   display: flex;
   justify-content: center;
   gap: 2em;
+  padding: 2em 4em;
 }
 
 
 .module {
-    border: 1px solid #9a9a9a;
-    padding: .6em 1em;
+    /* border: 1px solid #9a9a9a; */
+    /* padding: .6em 1em; */
     max-width: 300px;
     text-align: center;
+
+        box-shadow: 0 0 15px rgba(105, 105, 105, 0.2);
+    border-radius: 15px;
 }
 
 .module-title {

@@ -26,7 +26,7 @@ export default function Dominance(props: any) {
     datasets: [
       {
         label: "Market Dominance",
-        data: Object.values(data).map((value) => value.toFixed(1)),
+        data: Object.values(data).map((value: any) => value.toFixed(1)),
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
