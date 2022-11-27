@@ -3,32 +3,31 @@ import { useEffect, useState } from "react";
 import "./index.css";
 import { nanoid } from "nanoid";
 
-export default function Converter() {
+export default function Converter(props: any) {
 
   const [quantity, setQuantity] = useState(1);
   const [result, setResult] = useState(1);
+  const [baseCurrency, setBaseCurrency] = useState({id: "bitcoin", name: "Bitcoin", symbol: "BTC", price: 16000})
+  const [targetCurrency, setTargetCurrency] = useState({id: "ethereum", name: "Ethereum", symbol: "ETH", price: 1200});
 
-  const [baseCurrency, setBaseCurrency] = useState("USD")
-  const [targetCurrency, setTargetCurrency] = useState("BTC");
 
-  let forexCurrencies: any = [
-    { name: "United States Dollar", symbol: "USD" }
-  ];
-  let cryptocurrencies: any = [
-    { name: "Bitcoin", symbol: "BTC" },
-    { name: "Ethereum", symbol: "ETH" },
-    { name: "Cardano", symbol: "ADA" },
-  ];
-  const currencies = [...forexCurrencies, ...cryptocurrencies];
+  const currencies = props.cryptos.map((crypto: any)=> {
+    return { id: crypto.id, name: crypto.name, symbol: crypto.symbol.toUpperCase(), price: crypto.current_price };
+  });
 
   const [formData, setFormData] = useState({
     quantity: 1,
-    base: "USD",
-    target: "BTC",
+    base: baseCurrency.id,
+    target: targetCurrency.id,
   });
 
+
   function handleChange(event: any) {
-    const { name, value, type, checked } = event.target;
+    const { name, value } = event.target;
+    console.log(value);
+    // console.log(baseCurrency);
+    // console.log(targetCurrency);
+
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
@@ -37,14 +36,21 @@ export default function Converter() {
     });
     calculateResults();
 
+  }
 
+  function findCrypto(id: any, cryptoList: any) {
+    cryptoList=props.cryptos;
+    return cryptoList.find((crypto: any)=> {
+      return crypto.id ===id;
+    });
 
   }
 
   useEffect(()=> {
     setQuantity(formData.quantity);
-    setBaseCurrency(formData.base);
-    setTargetCurrency(formData.target);
+    // setBaseCurrency(findCrypto(props.cryptos, formData.base));
+    // setTargetCurrency(findCrypto(props.cryptos, formData.target));
+    console.log(findCrypto(props.cryptos, formData.target));
   }, [formData])
 
   function handleSubmit(event: any) {
@@ -65,6 +71,7 @@ export default function Converter() {
   }
   function calculateResults() {
     setResult(100);
+
   };
 
   return (
@@ -87,8 +94,8 @@ export default function Converter() {
             name="base"
             value={formData.base}
           >
-            {currencies.map((currency) => (
-              <option key={nanoid()} value={currency.symbol}>
+            {currencies.map((currency: any) => (
+              <option key={nanoid()} value={currency.id}>
                 {currency.name} ({currency.symbol})
               </option>
             ))}
@@ -104,8 +111,8 @@ export default function Converter() {
             name="target"
             value={formData.target}
           >
-            {currencies.map((currency) => (
-              <option key={nanoid()} value={currency.symbol}>
+            {currencies.map((currency: any) => (
+              <option key={nanoid()} value={currency.id}>
                 {currency.name} ({currency.symbol})
               </option>
             ))}
@@ -114,11 +121,12 @@ export default function Converter() {
 
         <div className="results">
           <p className="">
-            {quantity} ({baseCurrency})
+            {quantity} {baseCurrency.name} ({baseCurrency.symbol})
           </p>
           <p>=</p>
           <p className="">
-            <span className="result">{result}</span> ({targetCurrency})
+            <span className="result">{result}</span> {targetCurrency.name} (
+            {targetCurrency.symbol})
           </p>
         </div>
       </div>

@@ -1,39 +1,11 @@
 import "../css/CryptoCard.css";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import styled from "styled-components";
-
-
-
-function Change(props: any) {
-  const Percent = styled.p<{ data: number }>`
-    background-color: ${(props: any) =>
-      props.data === 0
-        ? "var(--clr-fontAccent)"
-        : props.data > 0
-        ? "var(--clr-gain)"
-        : "var(--clr-loss)"};
-  `;
-
-  return (
-    <Percent className="card-price-change" data={props.value}>
-      <div className="Change">
-        {props.value > 0 ? (
-          <i className="fa-solid fa-caret-up"></i>
-        ) : (
-          <i className="fa-solid fa-caret-down"></i>
-        )}
-        {props.value.toFixed(2)}%
-      </div>
-    </Percent>
-  );
-}
-
+import Change from "./Change";
 
 
 
 export default function CryptoCard(props: any) {
   let crypto = props.crypto;
-  console.log(crypto);
 
   return (
     <div className="CryptoCard">
@@ -73,7 +45,7 @@ export default function CryptoCard(props: any) {
                 }
                 style={{ fill: "none", strokeWidth: 3 }}
               />
-            </Sparklines>{" "}
+            </Sparklines>
           </div>
         </div>
       ) : (

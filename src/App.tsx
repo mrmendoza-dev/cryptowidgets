@@ -1,28 +1,17 @@
 import { useEffect, useState } from "react";
-import "./css/App.css";
-import DarkMode from "./components/DarkMode";
-import logo from "./assets/logo.png";
-import styled from "styled-components";
-import Scroller from "./components/Scroller/Scroller";
-import CryptoCard from "./components/CryptoCard";
-import FearGreed from "./components/FearGreed/FearGreed";
-import EthGasTracker from "./components/EthGasTracker/EthGasTracker";
 import Converter from "./components/Converter/Converter";
+import CryptoCard from "./components/CryptoCard";
 import Dominance from "./components/Dominance/Dominance";
+import EthGasTracker from "./components/EthGasTracker/EthGasTracker";
+import FearGreed from "./components/FearGreed/FearGreed";
+import Scroller from "./components/Scroller/Scroller";
 import Trending from "./components/Trending/Trending";
-import CryptoList from "./components/CryptoList/CryptoList";
+import "./css/App.css";
 
+import { nanoid } from "nanoid";
 import Footer from "./components/Nav/Footer";
 import Header from "./components/Nav/Header";
-
-const Percent = styled.p<{ data: number }>`
-  color: ${(props: any) =>
-    props.data === 0
-      ? "var(--clr-fontAccent)"
-      : props.data > 0
-      ? "var(--clr-gain)"
-      : "var(--clr-loss)"};
-`;
+import { defaultCryptoData, defaultGlobalData, defaultTrendingData } from "./data/defaultData";
 
 function App() {
   const [cryptos, setCryptos] = useState([]);
@@ -34,7 +23,7 @@ function App() {
     total_volume: { usd: 0 },
     market_cap_percentage: { btc: 0, eth: 0 },
   });
-    const [trending, setTrending] = useState([]);
+  const [trending, setTrending] = useState([]);
 
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const baseUrl = "https://api.coingecko.com/api/v3/";
@@ -50,6 +39,16 @@ function App() {
   )}&sparkline=${sparkline}&price_change_percentage=${pricePercentage}`;
   const globalUrl = "https://api.coingecko.com/api/v3/global";
   const trendingUrl = "https://api.coingecko.com/api/v3/search/trending";
+
+  function loadDefault() {
+    setCryptos(defaultCryptoData);
+    setGlobalData(defaultGlobalData.data);
+    setTrending(defaultTrendingData.coins);
+  }
+  useEffect(()=> {
+    loadDefault();
+    getCryptoData();
+  }, []);
 
 
   function getCryptoData() {
@@ -69,9 +68,6 @@ function App() {
         setTrending(data.coins);
       });
   }
-  useEffect(getCryptoData, []);
-
-
 
   return (
     <div className="App">
@@ -80,7 +76,7 @@ function App() {
         <Scroller cryptos={cryptos} />
         <div className="crypto-cards">
           {cryptos.slice(0, 5).map((crypto) => {
-            return <CryptoCard crypto={crypto} />;
+            return <CryptoCard crypto={crypto} key={nanoid()} />;
           })}
         </div>
 
@@ -92,10 +88,10 @@ function App() {
           <Dominance cryptos={globalData.market_cap_percentage} />
           <Trending cryptos={trending} />
         </div>
-        <div className="widget-row">
-          {/* <CryptoList cryptos={cryptos.slice(0,10)} /> */}
-        </div>
-        <Converter />
+        {/* <div className="widget-row">
+          <CryptoList cryptos={cryptos.slice(0,10)} />
+        </div> */}
+        <Converter cryptos={cryptos} />
       </div>
       <div className="space"></div>
       <Footer title={"CryptoWidgets"} />
