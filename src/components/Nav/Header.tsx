@@ -14,7 +14,7 @@ const Percent = styled.p<{ data: number }>`
 
 export default function Header(props: any) {
   let globalData = props.globalData;
-  const repoUrl = "https://github.com/mrmendoza171/cryptotracker";
+  const repoUrl = "https://github.com/mrmendoza171/cryptowidgets";
 
   return (
     <div className="Header">
