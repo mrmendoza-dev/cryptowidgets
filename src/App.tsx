@@ -36,11 +36,6 @@ function App() {
   });
     const [trending, setTrending] = useState([]);
 
-
-  useEffect(getCryptoData, []);
-  useEffect(getGlobalData, []);
-  useEffect(getTrendingData, []);
-
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const baseUrl = "https://api.coingecko.com/api/v3/";
   const currency = "usd";
@@ -57,30 +52,26 @@ function App() {
   const trendingUrl = "https://api.coingecko.com/api/v3/search/trending";
 
 
-
   function getCryptoData() {
     fetch(cryptosUrl)
       .then((res) => res.json())
       .then((data) => {
         setCryptos(data);
       });
-  }
-
-  function getGlobalData() {
     fetch(globalUrl)
       .then((res) => res.json())
       .then((data) => {
         setGlobalData(data.data);
       });
-  }
-
-  function getTrendingData() {
     fetch(trendingUrl)
       .then((res) => res.json())
       .then((data) => {
         setTrending(data.coins);
       });
   }
+  useEffect(getCryptoData, []);
+
+
 
   return (
     <div className="App">
