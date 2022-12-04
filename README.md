@@ -1,6 +1,7 @@
 # CryptoWidgets
 ### Continuing development on [CryptoTracker All-in-One App](https://github.com/mrmendoza171/cryptotracker)
 #### Cryptocurrency widgets and tools including price trackers, converters, and indicators.
+#### Inspired and modeled by CoinMarketCap and CoinGecko.
 
 ## Features
 - Cryptocurrency converter
